@@ -1,0 +1,100 @@
+<div class="container">
+  <h1>Update Candidate</h1>
+  <form (ngSubmit)="onSubmit()" #candidateForm="ngForm">
+    <div class="row">
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" id="firstName" class="form-control" [(ngModel)]="candidate.firstName" name="firstName"
+            required minlength="3" pattern="[A-Za-z]+" #firstName="ngModel" placeholder="Enter the First Name" />
+          <div *ngIf="firstName.invalid && firstName.touched" class="error-message">
+            <small *ngIf="firstName.errors?.['required']">First Name is required.</small>
+            <small *ngIf="firstName.errors?.['minlength']">First Name must be at least 3 characters long.</small>
+            <small *ngIf="firstName.errors?.['pattern']">First Name can only contain letters (no numbers or special
+              characters).</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" id="lastName" class="form-control" [(ngModel)]="candidate.lastName" name="lastName"
+            placeholder="Enter the Last Name" required minlength="3" pattern="[A-Za-z]+" #lastName="ngModel" />
+          <div *ngIf="lastName.invalid && lastName.touched" class="error-message">
+            <small *ngIf="lastName.errors?.['required']">Last Name is required.</small>
+            <small *ngIf="lastName.errors?.['minlength']">Last Name must be at least 3 characters long.</small>
+            <small *ngIf="lastName.errors?.['pattern']">Last Name can only contain letters (no numbers or special
+              characters).</small>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="experience" class="form-label">Experience</label>
+        <input type="number" min="0" max="30" step="1" id="experience" class="form-control" #experience="ngModel"
+          [(ngModel)]="candidate.experience" name="experience" required>
+        <div *ngIf="experience.invalid && experience.touched" class="error-message">
+          <small *ngIf="experience.errors?.['required']">Experience is required.</small>
+          <small *ngIf="experience.errors?.['min']">Experience cannot be less than 0.</small>
+          <small *ngIf="experience.errors?.['max']">Experience cannot be more than 30.</small>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" id="location" pattern="[A-Za-z]+" minlength="3" class="form-control"
+          [(ngModel)]="candidate.location" placeholder="Enter the Location" #location="ngModel" name="location"
+          required>
+        <div *ngIf="location.invalid && location.touched" class="error-message">
+          <small *ngIf="location.errors?.['required']">Location is required.</small>
+          <small *ngIf="location.errors?.['minlength']">Location must be at least 3 characters long.</small>
+          <small *ngIf="location.errors?.['pattern']">Location can only contain letters (no numbers or special
+            characters).</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-13">
+        <label for="qualification" class="form-label">Qualification</label>
+        <select name="qualification" class="form-control" id="qualification" #qualification="ngModel"
+          [(ngModel)]="candidate.qualification" required>
+          <option value="" disabled selected>Select a Qualification</option>
+          <option value="MCA">MCA</option>
+          <option value="BCA">BCA</option>
+          <option value="B.TECH">B.TECH</option>
+          <option value="BSC CS">BSC CS</option>
+        </select>
+        <div *ngIf="qualification.invalid && qualification.touched" class="error-message">
+          <small *ngIf="qualification.errors?.['required']">Qualification is required.</small>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" class="form-control"
+          [(ngModel)]="candidate.email" placeholder="Enter the Email" #email="ngModel" name="email" required>
+        <div *ngIf="email.invalid && email.touched" class="error-message">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['pattern']">Email format is incorrect.</small>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="showAlert" class="alert alert-success" role="alert"><b>
+      Successfully Updated!</b>
+    </div>
+
+    <div class="text-center mt-4">
+      <button type="submit"  class="btn btn-primary" [disabled]="!candidateForm.form.valid">
+        Update
+      </button>
+    </div>
+  </form>
+</div>

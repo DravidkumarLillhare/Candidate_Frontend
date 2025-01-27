@@ -1,0 +1,49 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 10px;
+  position: sticky;
+  text-align: center;
+}
+
+td {
+  padding: 8px 10px;
+  border: 3px solid #cabfbf;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.td {
+  text-align: center;
+  border-style: double;
+}
+
+.activityButton {
+  background-color: #cfd5d0;
+  font-size: 8000;
+  font-weight: bold;
+  color: #231414;
+  border-radius: 5%;
+  padding: 20px;
+}
+
+
+
+.toast-success {
+  background-color: #3acf5d !important;
+}

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="firstName" class="form-label">First Name: <b style="color: rgb(16, 112, 5);">{{ candidate.firstName }}</b></label>
+    </div>
+    <div class="col-md-6">
+      <label for="lastName" class="form-label">Last Name: <b style="color: rgb(16, 112, 5);" >{{ candidate.lastName }}</b></label>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="experience" class="form-label">Experience: <b style="color: rgb(16, 112, 5);">{{ candidate.experience }}</b></label>
+    </div>
+    <div class="col-md-6">
+      <label for="location" class="form-label">Location: <b style="color: rgb(16, 112, 5);">{{ candidate.location }}</b></label>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="qualification" class="form-label">Qualification: <b style="color: rgb(16, 112, 5);">{{ candidate.qualification }}</b></label>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email: <b style="color: rgb(16, 112, 5);">{{ candidate.email }}</b></label>
+    </div>
+  </div>
+
+  <div *ngIf="resumeUrl" class="resume-container">
+    <h3>Resume Preview:</h3>
+    <iframe [src]="resumeUrl" width="100%" height="500px"></iframe>
+  </div>
+</div>

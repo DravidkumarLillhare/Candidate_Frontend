@@ -1,0 +1,116 @@
+input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+input.ng-touched.ng-valid {
+  border: 1px solid green;
+}
+
+small {
+  color: red;
+  font-size: 12px;
+}
+
+
+
+.container {
+max-width: 600px;
+margin: 2rem auto;
+padding: 2rem;
+background-color: #f9f9f9;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+text-align: center;
+color: #333;
+margin-bottom: 1.5rem;
+}
+
+.form-label {
+font-weight: 600;
+color: #555;
+}
+
+.form-control {
+border-radius: 5px;
+border: 1px solid #ddd;
+padding: 0.5rem;
+}
+
+.form-control:focus {
+border-color: #007bff;
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+width: 100%;
+padding: 0.8rem;
+font-size: 1rem;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:disabled {
+background-color: #cccccc;
+cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+background-color: #0056b3;
+}
+
+.text-danger small {
+display: block;
+margin-top: 0.3rem;
+font-size: 0.85rem;
+color: #d9534f;
+}
+
+.alert {
+text-align: center;
+font-size: 1rem;
+}
+
+.alert-success {
+background-color: #d4edda;
+border-color: #c3e6cb;
+color: #155724;
+padding: 0.8rem;
+border-radius: 5px;
+margin-bottom: 1rem;
+}
+
+select.form-control {
+appearance: none;
+background-color: #fff;
+padding: 0.5rem;
+border-radius: 5px;
+}
+
+select.form-control:focus {
+border-color: #007bff;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.toast {
+  z-index: 1055; 
+}
