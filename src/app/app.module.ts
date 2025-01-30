@@ -10,6 +10,8 @@ import { ListCandidateComponent } from './list-candidate/list-candidate.componen
 import { UpdateCandidateComponent } from './update-candidate/update-candidate.component';
 import { ViewCandidateComponent } from './view-candidate/view-candidate.component';
 import { ToastrModule,ToastrService } from 'ngx-toastr';
+
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbTooltipModule,
+    NgbTooltipModule,HttpClientTestingModule,
     
   ],
   providers: [
