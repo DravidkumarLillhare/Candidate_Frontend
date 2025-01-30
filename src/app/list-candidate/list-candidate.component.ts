@@ -68,6 +68,7 @@ async deleteCandidate(id: number) {
       console.error('Error deleting candidate or resume:', error);
       alert('An error occurred. Please try again.');
     }
+    window.location.reload();
   
 }
 
@@ -98,14 +99,19 @@ confirmDelete() {
       console.log('Candidate deleted');
       this.showSuccess();
       this.loadCandidates();
-    });
-  }
-  if (typeof document !== 'undefined') {
-    import('bootstrap').then((bootstrap) => {
-      const modal = new bootstrap.Modal(document.getElementById('confirmationModal')!);
-      modal.hide();
+      
+      // Close the modal after a delay to ensure everything is cleaned up
+      setTimeout(() => {
+        if (typeof document !== 'undefined') {
+          import('bootstrap').then((bootstrap) => {
+            const modal = new bootstrap.Modal(document.getElementById('confirmationModal')!);
+            modal.hide();
+          });
+        }
+      }, 300);
     });
   }
 }
+
 
 }
