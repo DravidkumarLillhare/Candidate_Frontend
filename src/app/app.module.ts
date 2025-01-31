@@ -36,4 +36,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  title = 'Hello, Candidate_frontend';
+ }
