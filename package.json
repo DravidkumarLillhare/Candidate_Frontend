@@ -6,11 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-  
     "test": "ng test --watch=false --browsers=ChromeHeadless",
     "serve:ssr:Candidate_frontend": "node dist/candidate-frontend/server/server.mjs",
-    "deploy": "netlify deploy" 
-
+    "deploy": "netlify deploy"
   },
   "private": true,
   "dependencies": {
