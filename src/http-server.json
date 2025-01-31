@@ -1,0 +1,9 @@
+{
+        "CORS": true,
+        "cache": 3600,
+        "connectionTimeout": 120,
+        "directoryListings": false,
+        "autoIndex": false,
+        "defaultFileExtensions": ["html"]
+      }
+      
