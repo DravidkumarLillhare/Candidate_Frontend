@@ -19,10 +19,16 @@ export function app(): express.Express {
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
+
   // Serve static files from /browser
-  server.get('*.*', express.static(browserDistFolder, {
+  server.use(express.static(browserDistFolder, {  // Changed from server.get to server.use
     maxAge: '1y'
   }));
+
+  // Serve the favicon.ico file
+  server.get('/favicon.ico', (req, res) => {  // Added this block to serve favicon.ico
+    res.sendFile(join(browserDistFolder, 'favicon.ico'));
+  });
 
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
