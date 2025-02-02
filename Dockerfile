@@ -5,7 +5,9 @@ WORKDIR /app
 
 # Copy package.json and install dependencies
 COPY package*.json ./
-RUN npm install --legacy-peer-deps
+# RUN npm install --legacy-peer-deps
+RUN npm cache clean --force && npm install -g @angular/cli && npm install --legacy-peer-deps
+
 
 # Copy the rest of the app and build
 COPY . .
